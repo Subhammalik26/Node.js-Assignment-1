@@ -47,6 +47,10 @@ http.createServer((req, res) => {     // create an HTTP server.
         res.statusCode = 302;
         res.setHeader('Location', '/create');  // Redirecting to the create route if there is no user.
         res.end();
+      } else if (data === '') { 
+        res.statusCode = 302;
+        res.setHeader('Location', '/create');  // Redirecting to the create route if there is no user.
+        res.end(); 
       } else {   
       res.setHeader('Content-Type', 'text/html');
       res.write(data);     // Response back or show the data to the client or user.
